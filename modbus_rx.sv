@@ -32,8 +32,8 @@ parameter integer TIMEOUT = 40; // maximum uart bit intervals between received b
 parameter integer TIMEOUT_CLOCK_TICKS = TIMEOUT*PRESCALER; // clock ticks between 
 parameter integer RESET_NP_TICKS      = PRESCALER*30; // ~3 bytes
 
-logic [$clog2(TIMEOUT_CLOCK_TICKS)-1:0] to_ctr;
-logic [$clog2(RESET_NP_TICKS)-1:0]      np_ctr;
+logic [$clog2(TIMEOUT_CLOCK_TICKS+1)-1:0] to_ctr;
+logic [$clog2(RESET_NP_TICKS+1)-1:0]      np_ctr;
 logic        np;
 
 logic [7:0]  byte_ctr;
